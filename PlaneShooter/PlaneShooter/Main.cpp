@@ -39,6 +39,7 @@ void Draw() {
 	for (auto& model : loader->GetModels()) {
 		model.Draw();
 	}
+	glutSwapBuffers();
 }
 
 void KeyEvent(unsigned char key, int mouseX, int mouseY) {
