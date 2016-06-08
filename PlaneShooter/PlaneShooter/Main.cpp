@@ -1,75 +1,54 @@
 #include <GL/freeglut.h>
-#include "ModelLoader.h"
-#include "Model.h"
+#include "Window.h"
 
-float width = 1920, height = 1080, lastFrameTime = 0;
-ModelLoader* loader;
+Window* window = NULL;
+GLint windowInt;
 
-struct Camera
-{
-	float posX = 0;
-	float posY = 0;
-	float posZ = 0;
-	float rotX = 0;
-	float rotY = 0;
-	float rotZ = 0;
-} camera;
-
-void SetupWindow()
-{
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
-
-	glViewport(0, 0, width, height);
-
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(60.0f, (width / height), 0.1f, 30);
-
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-
-	
-	glTranslatef(camera.posX, 0, camera.posY);
-}
-
-void Draw() {
-	SetupWindow();
-
-	for (auto& model : loader->GetModels()) {
-		model.Draw();
-	}
-	glutSwapBuffers();
+void Init() {
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_TEXTURE_2D);
+	GLfloat position[4] = { 0, 5, 0, 0 };
+	glLightfv(GL_LIGHT0, GL_POSITION, position);
 }
 
 void KeyEvent(unsigned char key, int mouseX, int mouseY) {
-
+	switch (key) {
+	case 27:
+		exit(0);
+		break;
+	}
 }
 
-void MouseMotionEvent(int x, int y) {
+void PaintComponent(void)
+{
+	window->Setup(800, 600);
+	window->Draw();
+}
 
+void resize(int width, int height) {
+	glutReshapeWindow(800, 600);
 }
 
 void Idle() {
-	float frameTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0f;
-	float deltaTime = frameTime - lastFrameTime;
-	lastFrameTime = frameTime;
-
 	glutPostRedisplay();
 }
 
-int main(int argc, char* argv[]) {
-	loader = new ModelLoader();
+int main(int argc, char *argv[]) {
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
-	glutInitWindowSize(int(width), int(height));
 	glutInit(&argc, argv);
-	glutCreateWindow("PlaneShooter");
+	glutInitWindowSize(800, 600);
 
-	glEnable(GL_DEPTH_TEST);
+	windowInt = glutCreateWindow("PlaneShooter");
 
+	glutKeyboardFunc(KeyEvent);
+	glutDisplayFunc(PaintComponent);
+	glutReshapeFunc(resize);
 	glutIdleFunc(Idle);
-	glutDisplayFunc(Draw);
-	
+
+	Init();
+	window = new Window();
 	glutMainLoop();
 	return 0;
 }

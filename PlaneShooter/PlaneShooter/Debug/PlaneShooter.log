@@ -1,7 +1,2 @@
-﻿  plane.cpp
-  ModelLoader.cpp
-  Model.cpp
-  Main.cpp
-c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\main.cpp(23): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
-  Generating Code...
+﻿  main.cpp
   PlaneShooter.vcxproj -> C:\Users\jeroe\Desktop\map\school\eindproject-3d-graphics\PlaneShooter\Debug\PlaneShooter.exe
