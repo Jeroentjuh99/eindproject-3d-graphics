@@ -1,17 +1,15 @@
 #pragma once
 
-#include "ModelLoader.h"
+#include "SuperObject.h"
+#include <array>
+#include <GL/freeglut.h>
 
-class Plane : public ModelLoader
+class Plane : public SuperObject
 {
 public:
 	Plane();
 	~Plane();
-	void SetLocation(float, float, float);
-	void SetRotation(float, float, float);
-	Vec3f * GetLocation();
-	Vec3f * GetRotation();
+	void Draw(void);
 
 private:
-	Vec3f *location, *rotation;
 };

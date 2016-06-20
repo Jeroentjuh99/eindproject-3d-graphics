@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  Window.cpp
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(82): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(83): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   PlaneShooter.vcxproj -> C:\Users\jeroe\Desktop\map\school\eindproject-3d-graphics\PlaneShooter\Debug\PlaneShooter.exe

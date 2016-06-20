@@ -151,14 +151,18 @@
     <ClInclude Include="ModelLoader.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="SuperObject.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tunnel.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelLoader.cpp" />
     <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="SuperObject.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Tunnel.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

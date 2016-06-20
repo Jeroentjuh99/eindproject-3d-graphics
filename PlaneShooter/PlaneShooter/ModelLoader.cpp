@@ -154,8 +154,22 @@ ModelLoader::~ModelLoader(void)
 {
 }
 
-
-
+float ModelLoader::getZFormat()
+{
+	float min = 0, max = 0;
+	for (auto c : vertices)
+	{
+		if(c.z < min)
+		{
+			min = c.z;
+		}
+		if(c.z > max)
+		{
+			max = c.z;
+		}
+	}
+	return max - min;
+}
 
 void ModelLoader::draw()
 {

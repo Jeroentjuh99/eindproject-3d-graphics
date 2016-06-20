@@ -1,0 +1,12 @@
+# Blender MTL File: 'tunnel.blend'
+# Material Count: 1
+
+newmtl Material
+Ns 60.784314
+Ka 1.000000 1.000000 1.000000
+Kd 0.127042 0.155183 0.179628
+Ks 0.047850 0.057818 0.066432
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2

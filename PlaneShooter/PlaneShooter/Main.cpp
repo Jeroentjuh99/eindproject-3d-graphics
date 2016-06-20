@@ -1,16 +1,12 @@
 #include <GL/freeglut.h>
 #include "Window.h"
 
-Window* window = NULL;
+Window* window = nullptr;
 GLint windowInt;
 
 void Init() {
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
 	glEnable(GL_TEXTURE_2D);
-	GLfloat position[4] = { 0, 5, 0, 0 };
-	glLightfv(GL_LIGHT0, GL_POSITION, position);
 }
 
 void KeyEvent(unsigned char key, int mouseX, int mouseY) {
@@ -21,28 +17,36 @@ void KeyEvent(unsigned char key, int mouseX, int mouseY) {
 	}
 }
 
+void MouseMotionEvent(int x, int y)
+{
+	window->changeMouseLoc(x, y);
+}
+
 void PaintComponent(void)
 {
-	window->Setup(800, 600);
+	window->Setup(1000, 1000);
 	window->Draw();
 }
 
 void resize(int width, int height) {
-	glutReshapeWindow(800, 600);
+	glutReshapeWindow(1000, 1000);
 }
 
 void Idle() {
+	window->movePlane();
 	glutPostRedisplay();
 }
 
 int main(int argc, char *argv[]) {
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 	glutInit(&argc, argv);
-	glutInitWindowSize(800, 600);
+	glutInitWindowSize(1000, 1000);
 
-	windowInt = glutCreateWindow("PlaneShooter");
+	windowInt = glutCreateWindow("Tunnel Warrior");
 
 	glutKeyboardFunc(KeyEvent);
+	glutPassiveMotionFunc(MouseMotionEvent);
+	glutMotionFunc(MouseMotionEvent);
 	glutDisplayFunc(PaintComponent);
 	glutReshapeFunc(resize);
 	glutIdleFunc(Idle);

@@ -1,29 +1,20 @@
 #include "Plane.h"
 
-Plane::Plane() : ModelLoader("models/plane/plane.obj")
+Plane::Plane() : SuperObject("models/plane/plane.obj")
 {
+	this->location = new Vec3f(0, 0, -15);
+	this->rotation = new Vec3f(0, 0, 0);
 }
 
 Plane::~Plane()
 {
 }
 
-void Plane::SetLocation(float x, float y, float z)
+void Plane::Draw()
 {
-	this->location = new Vec3f(x, y, z);
-}
-
-void Plane::SetRotation(float rotX, float rotY, float rotZ)
-{
-	this->rotation = new Vec3f(rotX, rotY, rotZ);
-}
-
-Vec3f * Plane::GetLocation()
-{
-	return location;
-}
-
-Vec3f * Plane::GetRotation()
-{
-	return rotation;
+	glTranslatef(location->x, location->y, location->z);
+	glScalef(0.7, 0.7, -0.7);
+	__super::Draw();
+	glScalef(1, 1, 1);
+	glTranslatef(0, 0, 0);
 }

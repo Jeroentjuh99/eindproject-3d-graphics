@@ -75,5 +75,6 @@ public:
 	ModelLoader(std::string filename);
 	~ModelLoader(void);
 
+	float getZFormat();
 	void draw();
 };
