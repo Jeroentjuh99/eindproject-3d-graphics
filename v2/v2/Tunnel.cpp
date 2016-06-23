@@ -18,7 +18,7 @@ void Tunnel::Draw()
 		angle += 0.2f;
 	}
 	glRotatef(angle, 0, 0, 1);
-	
+
 	__super::Draw();
 	glScalef(1, 1, 1);
 	glTranslatef(0, 0, 0);

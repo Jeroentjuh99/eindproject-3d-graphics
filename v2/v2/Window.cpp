@@ -65,8 +65,9 @@ void Window::Logic()
 	std::array<float, 3> temp = cube->GetLocation(), planetemp = plane->GetLocation();
 	if (temp[2] + cubesize > planetemp[2] && temp[2] - cubesize < planetemp[2])
 	{
-		if(temp[0] + cubesize > planetemp[0] && temp[0] - cubesize < planetemp[0]){
-			if(temp[1] + cubesize > planetemp[1] && temp[1] - cubesize < planetemp[1])
+		if (temp[0] + cubesize > planetemp[0] && temp[0] - cubesize < planetemp[0])
+		{
+			if (temp[1] + cubesize > planetemp[1] && temp[1] - cubesize < planetemp[1])
 			{
 				plane->SetColor(cube->GetColor()[0], cube->GetColor()[1], cube->GetColor()[2]);
 				tunnel->SetRotating(!tunnel->GetRotating());
@@ -76,7 +77,7 @@ void Window::Logic()
 		}
 	}
 
-	if(temp[2] > 15)
+	if (temp[2] > 15)
 	{
 		CreateCube();
 	}
@@ -90,7 +91,7 @@ void Window::BarrelRoll()
 void Window::CreateCube()
 {
 	cube = new Cube();
-	cube->SetLocation(rand()%10 -5, rand() % 10 - 5, -50);
+	cube->SetLocation(rand() % 10 - 5, rand() % 10 - 5, -50);
 	cube->SetColor(float(rand() % 100) / 100, float(rand() % 100) / 100, float(rand() % 100) / 100);
 }
 
@@ -98,7 +99,7 @@ void Window::DrawScore()
 {
 	glLoadIdentity();
 	std::string text = "Score: " + std::to_string(score);
-	for(int i = 0; i < text.length(); i++)
+	for (int i = 0; i < text.length(); i++)
 	{
 		glutStrokeCharacter(GLUT_STROKE_ROMAN, text[i]);
 	}

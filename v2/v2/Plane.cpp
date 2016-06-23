@@ -16,13 +16,14 @@ void Plane::Draw()
 {
 	glTranslatef(location[0], location[1], location[2]);
 	glScalef(0.7, 0.7, -0.7);
-	if(rotation[2] != 0)
+	if (rotation[2] != 0)
 	{
 		angle--;
 		rotation[2]--;
-	} else
+	}
+	else
 	{
-		if(angle != 0)
+		if (angle != 0)
 			angle = 0;
 	}
 	glRotatef(angle, 0, 0, 1);

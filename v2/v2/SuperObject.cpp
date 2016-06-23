@@ -67,7 +67,8 @@ void SuperObject::Draw()
 		glColor3f(color[0], color[1], color[2]);
 		__super::draw();
 		glDisable(GL_COLOR_MATERIAL);
-	} else
+	}
+	else
 	{
 		__super::draw();
 	}

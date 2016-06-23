@@ -50,7 +50,6 @@ ModelLoader::ModelLoader(std::string fileName)
 	if (fileName == dirName)
 		dirName = "";
 
-
 	std::ifstream pFile(fileName.c_str());
 
 	if (!pFile.is_open())
@@ -59,10 +58,8 @@ ModelLoader::ModelLoader(std::string fileName)
 		return;
 	}
 
-
 	ObjGroup* currentGroup = new ObjGroup();
 	currentGroup->materialIndex = -1;
-
 
 	while (!pFile.eof())
 	{
@@ -149,7 +146,6 @@ ModelLoader::ModelLoader(std::string fileName)
 	groups.push_back(currentGroup);
 }
 
-
 ModelLoader::~ModelLoader(void)
 {
 }
@@ -159,11 +155,11 @@ float ModelLoader::getZFormat()
 	float min = 0, max = 0;
 	for (auto c : vertices)
 	{
-		if(c.z < min)
+		if (c.z < min)
 		{
 			min = c.z;
 		}
-		if(c.z > max)
+		if (c.z > max)
 		{
 			max = c.z;
 		}
@@ -173,7 +169,6 @@ float ModelLoader::getZFormat()
 
 void ModelLoader::draw()
 {
-
 	for (ObjGroup* group : groups)
 	{
 		glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, materials[group->materialIndex]->ambient);
@@ -201,7 +196,6 @@ void ModelLoader::draw()
 			}
 		}
 		glEnd();
-
 	}
 }
 
@@ -287,16 +281,13 @@ void ModelLoader::loadMaterialFile(std::string fileName, std::string dirName)
 	}
 	if (currentMaterial != NULL)
 		materials.push_back(currentMaterial);
-
 }
 
 ModelLoader::MaterialInfo::MaterialInfo()
 {
 	hasTexture = false;
 	*texture;
-
 }
-
 
 Vec3f::Vec3f(float x, float y, float z)
 {
@@ -321,8 +312,6 @@ float& Vec3f::operator [](int index)
 {
 	return v[index];
 }
-
-
 
 Vec2f::Vec2f(float x, float y)
 {

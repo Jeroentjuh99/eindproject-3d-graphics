@@ -17,7 +17,7 @@ void Cube::Draw()
 	GLfloat diffuse[4] = { color[0], color[1], color[2], 0.8 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diffuse);
-//	glEnable(GL_COLOR_MATERIAL);
+	//	glEnable(GL_COLOR_MATERIAL);
 	glBegin(GL_QUADS);
 	glColor3f(color[0], color[1], color[2]);
 	glVertex3f(cubesize, -cubesize, -cubesize);
@@ -55,7 +55,7 @@ void Cube::Draw()
 	glVertex3f(-cubesize, -cubesize, cubesize);
 	glVertex3f(-cubesize, -cubesize, -cubesize);
 	glEnd();
-//	glDisable(GL_COLOR_MATERIAL);
+	//	glDisable(GL_COLOR_MATERIAL);
 	glEnable(GL_TEXTURE_2D);
 	glPopMatrix();
 }

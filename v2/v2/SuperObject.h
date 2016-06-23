@@ -16,7 +16,6 @@ public:
 	std::array<float, 3> GetColor();
 	void Draw();
 
-
 protected:
 	float location[3], rotation[3], color[3];
 	bool needsDrawOverTexture = false;

@@ -7,7 +7,6 @@
 #include "Tunnel.h"
 #include "Cube.h"
 
-
 class Window
 {
 public:
