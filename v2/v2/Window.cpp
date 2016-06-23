@@ -57,7 +57,7 @@ void Window::changeMouseLoc(int x, int y)
 
 void Window::Logic()
 {
-	GLfloat position[4] = { plane->GetLocation()[0], plane->GetLocation()[1], plane->GetLocation()[2], 0.1 };
+	GLfloat position[4] = {plane->GetLocation()[0], plane->GetLocation()[1], plane->GetLocation()[2], 0.1};
 	glLightfv(GL_LIGHT0, GL_POSITION, position);
 
 	cube->SetLocation(cube->GetLocation()[0] + 0.05 * plane->GetLocation()[0], cube->GetLocation()[1] + 0.05 * plane->GetLocation()[1], cube->GetLocation()[2] + 0.05);

@@ -11,7 +11,7 @@ public:
 	void SetLocation(float, float, float);
 	void SetRotation(float, float, float);
 	std::array<float, 3> GetLocation();
-	std::array <float, 3> GetRotation();
+	std::array<float, 3> GetRotation();
 	void SetColor(float, float, float);
 	std::array<float, 3> GetColor();
 	void Draw();

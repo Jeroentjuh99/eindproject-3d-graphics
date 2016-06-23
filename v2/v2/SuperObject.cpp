@@ -28,7 +28,7 @@ void SuperObject::SetRotation(float rx, float ry, float rz)
 
 std::array<float, 3> SuperObject::GetLocation()
 {
-	std::array <float, 3> temp = std::array<float, 3>();
+	std::array<float, 3> temp = std::array<float, 3>();
 	temp[0] = location[0];
 	temp[1] = location[1];
 	temp[2] = location[2];
@@ -37,7 +37,7 @@ std::array<float, 3> SuperObject::GetLocation()
 
 std::array<float, 3> SuperObject::GetRotation()
 {
-	std::array <float, 3> temp = std::array<float, 3>();
+	std::array<float, 3> temp = std::array<float, 3>();
 	temp[0] = rotation[0];
 	temp[1] = rotation[1];
 	temp[2] = rotation[2];
@@ -53,7 +53,7 @@ void SuperObject::SetColor(float r, float g, float b)
 
 std::array<float, 3> SuperObject::GetColor()
 {
-	std::array <float, 3> temp = std::array<float, 3>();
+	std::array<float, 3> temp = std::array<float, 3>();
 	temp[0] = color[0];
 	temp[1] = color[1];
 	temp[2] = color[2];
@@ -62,7 +62,8 @@ std::array<float, 3> SuperObject::GetColor()
 
 void SuperObject::Draw()
 {
-	if (needsDrawOverTexture) {
+	if (needsDrawOverTexture)
+	{
 		glEnable(GL_COLOR_MATERIAL);
 		glColor3f(color[0], color[1], color[2]);
 		__super::draw();

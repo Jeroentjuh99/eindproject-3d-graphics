@@ -6,21 +6,17 @@ c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(63): 
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(102): warning C4018: '<': signed/unsigned mismatch
   Tunnel.cpp
+  Texture.cpp
   SuperObject.cpp
   Plane.cpp
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\plane.cpp(18): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   ModelLoader.cpp
+  main.cpp
   Cube.cpp
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\cube.cpp(16): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\cube.cpp(16): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\cube.cpp(16): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\cube.cpp(17): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
 c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\cube.cpp(17): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-  Generating Code...
-  Compiling...
-  main.cpp
-  Generating Code...
-  Compiling...
-  Texture.cpp
   Generating Code...
   v2.vcxproj -> C:\Users\jeroe\Desktop\map\school\eindproject-3d-graphics\v2\Debug\v2.exe

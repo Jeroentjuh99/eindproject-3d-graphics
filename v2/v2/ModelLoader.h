@@ -5,60 +5,75 @@
 #include <GL/freeglut.h>
 #include "Texture.h"
 
-class Vec3f {
+class Vec3f
+{
 public:
-	union {
-		struct {
+	union
+	{
+		struct
+		{
 			float x, y, z;
 		};
+
 		float v[3];
 	};
+
 	Vec3f();
-	Vec3f(Vec3f &);
+	Vec3f(Vec3f&);
 	Vec3f(float, float, float);
-	float & operator[](int);
+	float& operator[](int);
 };
 
-class Vec2f {
+class Vec2f
+{
 public:
-	union {
-		struct {
+	union
+	{
+		struct
+		{
 			float x, y;
 		};
+
 		float v[2];
 	};
+
 	Vec2f();
-	Vec2f(Vec2f &);
+	Vec2f(Vec2f&);
 	Vec2f(float, float);
-	float & operator [](int);
+	float& operator [](int);
 };
 
-class ModelLoader {
+class ModelLoader
+{
 private:
-	class Vertex {
+	class Vertex
+	{
 	public:
 		int position, normal, texcoord;
 	};
 
-	class Face {
+	class Face
+	{
 	public:
 		std::list<Vertex> vertices;
 	};
 
-	class MaterialInfo {
+	class MaterialInfo
+	{
 	public:
 		MaterialInfo();
 		std::string name;
 		bool hasTexture;
-		Texture *texture;
-		GLfloat ambient[4] = { 0.2f, 0.2f, 0.2f, 1.0f };
-		GLfloat diffuse[4] = { 0.8f, 0.8f, 0.8f, 1.0f };
-		GLfloat specular[4] = { 0, 0, 0, 1.0f };
-		GLfloat shininess[1] = { 0 };
-		GLfloat emission[4] = { 0, 0, 0, 1 };
+		Texture* texture;
+		GLfloat ambient[4] = {0.2f, 0.2f, 0.2f, 1.0f};
+		GLfloat diffuse[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+		GLfloat specular[4] = {0, 0, 0, 1.0f};
+		GLfloat shininess[1] = {0};
+		GLfloat emission[4] = {0, 0, 0, 1};
 	};
 
-	class ObjGroup {
+	class ObjGroup
+	{
 	public:
 		std::string name;
 		int materialIndex;

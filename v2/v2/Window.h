@@ -19,9 +19,9 @@ public:
 	void BarrelRoll();
 
 private:
-	Plane * plane = nullptr;
-	Tunnel * tunnel = nullptr;
-	Cube * cube = nullptr;
+	Plane* plane = nullptr;
+	Tunnel* tunnel = nullptr;
+	Cube* cube = nullptr;
 	void CreateCube();
 	void DrawScore();
 	int score = 0;

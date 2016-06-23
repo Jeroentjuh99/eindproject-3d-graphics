@@ -97,15 +97,15 @@ ModelLoader::ModelLoader(std::string fileName)
 			{
 				Face face;
 
-				for (size_t i = ii - 3; i < ii; i++)	//magische forlus om van quads triangles te maken ;)
+				for (size_t i = ii - 3; i < ii; i++) //magische forlus om van quads triangles te maken ;)
 				{
 					Vertex vertex;
 					std::vector<std::string> indices = split(params[i == (ii - 3) ? 1 : i], "/");
-					if (indices.size() >= 1)	//er is een positie
+					if (indices.size() >= 1) //er is een positie
 						vertex.position = atoi(indices[0].c_str()) - 1;
-					if (indices.size() == 2)		//alleen texture
+					if (indices.size() == 2) //alleen texture
 						vertex.texcoord = atoi(indices[1].c_str()) - 1;
-					if (indices.size() == 3)		//v/t/n of v//n
+					if (indices.size() == 3) //v/t/n of v//n
 					{
 						if (indices[1] != "")
 							vertex.texcoord = atoi(indices[1].c_str()) - 1;
@@ -183,9 +183,9 @@ void ModelLoader::draw()
 			materials[group->materialIndex]->texture->bind();
 		}
 		glBegin(GL_TRIANGLES);
-		for (Face &face : group->faces)
+		for (Face& face : group->faces)
 		{
-			for (Vertex &vertex : face.vertices)
+			for (Vertex& vertex : face.vertices)
 			{
 				glNormal3f(normals[vertex.normal].x, normals[vertex.normal].y, normals[vertex.normal].z);
 				if (materials[group->materialIndex]->texture != NULL)
@@ -295,13 +295,15 @@ Vec3f::Vec3f(float x, float y, float z)
 	this->y = y;
 	this->z = z;
 }
+
 Vec3f::Vec3f()
 {
 	this->x = 0;
 	this->y = 0;
 	this->z = 0;
 }
-Vec3f::Vec3f(Vec3f &other)
+
+Vec3f::Vec3f(Vec3f& other)
 {
 	this->x = other.x;
 	this->y = other.y;
@@ -318,12 +320,14 @@ Vec2f::Vec2f(float x, float y)
 	this->x = x;
 	this->y = y;
 }
+
 Vec2f::Vec2f()
 {
 	this->x = 0;
 	this->y = 0;
 }
-Vec2f::Vec2f(Vec2f &other)
+
+Vec2f::Vec2f(Vec2f& other)
 {
 	this->x = other.x;
 	this->y = other.y;
