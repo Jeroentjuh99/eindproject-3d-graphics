@@ -2,7 +2,7 @@
 
 Plane::Plane() : SuperObject("models/plane/plane.obj")
 {
-	this->location = new Vec3f(0, 0, -15);
+	this->location = new Vec3f(0, 0, -5);
 	this->rotation = new Vec3f(0, 0, 0);
 }
 

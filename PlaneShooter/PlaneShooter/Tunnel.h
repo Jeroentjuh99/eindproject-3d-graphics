@@ -10,6 +10,8 @@ public:
 	Tunnel(bool);
 	~Tunnel();
 	void Draw();
+	bool GetRotating();
+	void setRotating(bool);
 
 private:
 	bool isRotating = false;

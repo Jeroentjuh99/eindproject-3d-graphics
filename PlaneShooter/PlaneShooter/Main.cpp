@@ -34,6 +34,7 @@ void resize(int width, int height) {
 
 void Idle() {
 	window->movePlane();
+	window->ManageTunnel();
 	glutPostRedisplay();
 }
 

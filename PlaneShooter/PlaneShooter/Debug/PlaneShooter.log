@@ -1,5 +1,16 @@
-﻿  Window.cpp
-c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(82): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(83): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+﻿  Cube.cpp
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\cube.cpp(12): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\cube.cpp(12): warning C4154: deletion of an array expression; conversion to pointer supplied
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\cube.cpp(13): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\cube.cpp(13): warning C4154: deletion of an array expression; conversion to pointer supplied
+  Generating Code...
+  Compiling...
+  main.cpp
+  Window.cpp
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(59): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(59): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(73): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\planeshooter\planeshooter\window.cpp(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   PlaneShooter.vcxproj -> C:\Users\jeroe\Desktop\map\school\eindproject-3d-graphics\PlaneShooter\Debug\PlaneShooter.exe

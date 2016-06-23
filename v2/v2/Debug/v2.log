@@ -1,0 +1,11 @@
+﻿  Window.cpp
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(60): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(60): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(63): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\window.cpp(101): warning C4018: '<': signed/unsigned mismatch
+  Plane.cpp
+c:\users\jeroe\desktop\map\school\eindproject-3d-graphics\v2\v2\plane.cpp(18): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Generating Code...
+  v2.vcxproj -> C:\Users\jeroe\Desktop\map\school\eindproject-3d-graphics\v2\Debug\v2.exe

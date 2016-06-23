@@ -6,16 +6,21 @@
 Plane *plane = nullptr;
 Tunnel *t;
 float lenght;
+int lastZ;
 
 Window::Window()
 {
 	plane = new Plane();
 	t = new Tunnel(false);
 	lenght = t->getZFormat();
-	std::cout << lenght << "\n";
-	objects.push_back(t);
 	std::cout << "ready to roll";
-	CreateTunnel();
+}
+
+Window::~Window()
+{
+	objects.clear();
+	t = nullptr;
+	plane = nullptr;
 }
 
 void Window::Setup(int W_width, int W_height)
@@ -25,10 +30,10 @@ void Window::Setup(int W_width, int W_height)
 	glViewport(0, 0, W_width, W_height);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(90, float(W_width / W_height), 0.1, 100);
+	gluPerspective(90, float(W_width / W_height), 0.1, 200);
 
 	std::array<float,3> loc = plane->GetLocationFloat();
-	gluLookAt(0, 0, loc[2] + 15, 0, 0, loc[2], 0, 1, 0);
+	gluLookAt(loc[0]/10, -loc[1]/10, loc[2] + 15, 0, 0, loc[2], 0, 1, 0);
 }
 
 void Window::Draw()
@@ -42,6 +47,7 @@ void Window::Draw()
 	glPopMatrix();
 	glPushMatrix();
 
+	t->Draw();
 	for (auto obj : objects)
 	{
 		obj->Draw();
@@ -50,7 +56,7 @@ void Window::Draw()
 	glPopMatrix();
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	GLfloat position[4] = { plane->GetLocation()->x, plane->GetLocation()->y, plane->GetLocation()->z, 0.5 };
+	GLfloat position[4] = { plane->GetLocation()->x, plane->GetLocation()->y, plane->GetLocation()->z, 0.1 };
 	glLightfv(GL_LIGHT0, GL_POSITION, position);
 
 	glFlush();
@@ -67,29 +73,33 @@ void Window::movePlane()
 	plane->SetZLocation(plane->GetZLocation() - 0.1);
 }
 
-void Window::CreateTunnel()
-{
-	for(int i = 0; i < 5; i++)
-	{
-		CreateTunnelObject();
-	}
-}
-
-void Window::CreateTunnelObject()
-{
-	Tunnel * t = new Tunnel(rand() % 2);
-	t->SetLocation(0, 0, objects.at(0)->GetLocation()->z + 7.9223);
-	objects.push_back(t);
-}
-
 void Window::ManageTunnel()
 {
-	for (auto tunnel : objects)
-	{
-		if(tunnel->GetLocation()->z + 8 < plane->GetLocation()->z - 15)
+	int tempZ = -int(plane->GetLocation()->z);
+	if (tempZ != lastZ) {
+		if ((tempZ % 15) == 0)
 		{
-			objects.erase(std::find(objects.begin(), objects.end(), tunnel) - 1);
-			CreateTunnelObject();
+			std::cout << "cube \n";
+			Cube *c = new Cube(rand() % 8 - 4, rand() % 8 - 4, plane->GetLocation()->z - 20);
+			//Cube *c = new Cube(plane->GetLocation()->x, plane->GetLocation()->y, plane->GetLocation()->z);
+			c->SetColor(rand() % 1, rand() % 1, rand() % 1);
+			std::cout << c->GetLocation()[0] << " " << c->GetLocation()[1] << " " << c->GetLocation()[2] << " " <<  plane->GetLocation()->z << " " << objects.size() << "\n";
+			objects.push_back(c);
+		}
+		lastZ = tempZ;
+	}
+	Vec3f* a = plane->GetLocation();
+	for (auto p : objects)
+	{
+		if(a->z > p->GetLocation()[2] - cubesize && a->z < p->GetLocation()[2] + cubesize)
+		{
+			if(a->z > p->GetLocation()[0] - cubesize && a->z < p->GetLocation()[0] + cubesize)
+			{
+				if (a->z > p->GetLocation()[1] - cubesize && a->z < p->GetLocation()[1] + cubesize)
+				{
+					plane->SetColor(p->GetColor()[0], p->GetColor()[1], p->GetColor()[2]);
+				}
+			}
 		}
 	}
 }
