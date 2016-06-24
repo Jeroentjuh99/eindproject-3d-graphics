@@ -15,7 +15,7 @@ Plane::~Plane()
 void Plane::Draw()
 {
 	glTranslatef(location[0], location[1], location[2]);
-	glScalef(0.7, 0.7, -0.7);
+	glScalef(0.7f, 0.7f, -0.7f);
 	if (rotation[2] != 0)
 	{
 		angle--;

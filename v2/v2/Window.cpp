@@ -52,7 +52,7 @@ void Window::Draw()
 
 void Window::changeMouseLoc(int x, int y)
 {
-	plane->SetLocation(x / 25 - 15, -(y / 25 - 10), plane->GetLocation()[2]);
+	plane->SetLocation(float(x / 25 - 15), -float(y / 25 - 10), plane->GetLocation()[2]);
 }
 
 void Window::Logic()

@@ -13,10 +13,11 @@ void Cube::Draw()
 	glPushMatrix();
 	glTranslatef(location[0], location[1], location[2]);
 	glDisable(GL_TEXTURE_2D);
-	GLfloat ambient[4] = {color[0] * 0.5, color[1] * 0.5, color[2] * 0.5, 0.8};
-	GLfloat diffuse[4] = {color[0], color[1], color[2], 0.8};
+	GLfloat ambient[4] = {color[0] * 0.5f, color[1] * 0.5f, color[2] * 0.5f, 0.8f};
+	GLfloat diffuse[4] = {color[0], color[1], color[2], 0.8f};
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diffuse);
+	glRotatef(40, 1, 1, 0);
 	//	glEnable(GL_COLOR_MATERIAL);
 	glBegin(GL_QUADS);
 	glColor3f(color[0], color[1], color[2]);
